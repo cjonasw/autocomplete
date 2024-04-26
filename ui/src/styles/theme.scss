@@ -1,0 +1,20 @@
+// Variables for maintainability and future proofing for themes (eg. dark mode / accessibility options)
+html {
+  --background-color: #fff;
+  --text-color: #222;
+  --heading-color: #111;
+  --input-border-color: #ccc;
+  --input-focus-border-color: #2aa2ed;
+  --input-placeholder-color: #bbb;
+  --input-disabled-background-color: #f4f4f4;
+  --input-disabled-color: #888;
+  --select-item-color: #fff;
+  --select-hover-color: #f4f4f4;
+  --select-selected-color: #eeeeee;
+  --select-text-color: #222;
+  --select-item-border-color: #d4d4d4;
+  --label-color: #666;
+
+  --button-background-color: #666;
+  --button-text-color: #fff;
+}

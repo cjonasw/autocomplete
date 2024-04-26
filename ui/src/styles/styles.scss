@@ -1,0 +1,13 @@
+@import "reset";
+@import "theme";
+
+// General styles for the site
+// I am using BEM within the components themselves but not for the general styles
+// If this needed to be more like a CSS Component Library then I would approach this using BEM
+@import "form";
+@import "buttons";
+@import "typography";
+
+html {
+  min-width: 320px;
+}

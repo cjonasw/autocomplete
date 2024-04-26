@@ -1,0 +1,41 @@
+// Considered:
+// Infield labels - but thought this was too fancy for the exercise.
+
+input,
+label {
+  font-size: 1rem;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 2px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+
+  &:disabled {
+    background-color: var(--input-disabled-background-color);
+    color: var(--input-disabled-color);
+  }
+
+  &:focus {
+    outline: none;
+    border-color: var(--input-focus-border-color);
+  }
+
+  &::placeholder {
+    color: var(--input-placeholder-color);
+  }
+}
+
+// Top aligned labels, better UX - quicker to scan, less eye movement etc.
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--label-color);
+}
+
+.form-field {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,38 @@
+<!-- 
+    I planned to make autocomplete work with the input separate, however 
+    this would involve creating a directive and doing programatic 
+    repositioning which I thought was too much for this exercise. 
+-->
+
+<div class="form-field">
+  <label for="citiesA">Cities A (Client side filtering)</label>
+  <app-autocomplete
+    [options]="searchedCitiesA()"
+    inputId="citiesA"
+    (searchChanges)="autoCompleteSearchA($event)"
+    (optionSelected)="citiesASelected($event)"
+    [(value)]="cityA"
+    [disabled]="disabled()"
+  ></app-autocomplete>
+</div>
+
+<div class="form-field">
+  <label for="citiesB">Cities B (API call)</label>
+  <app-autocomplete
+    [options]="searchedCitiesB()"
+    inputId="citiesB"
+    (searchChanges)="autoCompleteSearchB($event)"
+    (optionSelected)="citiesBSelected($event)"
+    [debounceTime]="500"
+    inputPlaceholder="London"
+    [(value)]="cityB"
+    [disabled]="disabled()"
+  ></app-autocomplete>
+</div>
+
+<div class="demo">
+  <h3>Demo</h3>
+  <div>CityA value: {{ cityA }}</div>
+  <div>CityB value: {{ cityB }}</div>
+  <button (click)="disableToggle()">Disable toggle</button>
+</div>

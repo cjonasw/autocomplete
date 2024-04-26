@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  margin: 2em;
+}
+
+.demo {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 8px;
+
+  h3 {
+    margin-bottom: 0.25em;
+  }
+}

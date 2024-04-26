@@ -1,0 +1,25 @@
+<input
+  [id]="inputId"
+  class="search"
+  type="text"
+  [formControl]="searchControl"
+  (focus)="onSearchFocus()"
+  (keydown)="onSearchKeydown($event)"
+  autocomplete="off"
+  [placeholder]="inputPlaceholder"
+  [name]="inputName"
+/>
+
+<ul class="results" [ngClass]="{ 'results--active': isActive }">
+  @for (option of options | slice: 0: resultLimit; track option; ; let index =
+  $index) {
+  <li
+    #optionElement
+    class="results__item"
+    (click)="selectOption(option)"
+    [ngClass]="{ 'results__item--highlighted': highlightedIndex() === index }"
+  >
+    {{ option }}
+  </li>
+  }
+</ul>

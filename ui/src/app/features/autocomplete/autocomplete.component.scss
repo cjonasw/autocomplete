@@ -1,0 +1,53 @@
+:host {
+  display: inline-block; // default for inputs
+  position: relative;
+  padding: 0;
+}
+
+.search {
+  margin-bottom: 0;
+}
+
+.results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border: 1px solid var(--input-border-color);
+  z-index: 100;
+  width: 100%;
+  overflow-y: auto;
+
+  // Default hide
+  pointer-events: none;
+  max-height: 0;
+  transition: max-height 0.2s ease, opacity 0.2s ease;
+  opacity: 0;
+
+  // Show when active
+  &--active {
+    pointer-events: all;
+    max-height: 220px;
+    opacity: 1;
+  }
+
+  &__item {
+    padding: 1em;
+    background-color: var(--select-item-color);
+    border-bottom: 1px solid var(--select-item-border-color);
+    color: var(--select-text-color);
+    cursor: pointer;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: var(--select-hover-color);
+    }
+
+    &--highlighted,
+    &--highlighted:hover {
+      background-color: var(--select-selected-color);
+    }
+  }
+}
