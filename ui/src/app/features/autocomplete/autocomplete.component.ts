@@ -114,7 +114,7 @@ export class AutocompleteComponent implements OnInit {
 
   private dropdownActive: boolean = false;
 
-  // TODO: Change to signal
+  // TODO: Should change to signal
   // Used in template, keep it light
   get isActive(): boolean {
     return (

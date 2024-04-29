@@ -17,10 +17,15 @@ export class CityService {
   // Caching - but thought it wouldn't help the UX or performance due to the results being searched.
   //
   searchCities(query: string): Observable<string[]> {
+    // Don't allow empty queries or " " queries, return empty array
+    if (!query || query.trim() === "") {
+      return of([]);
+    }
+
     // Return empty array if query is empty
-    return query
-      ? this.http.get<string[]>(`${environment.apiUrl}/cities?search=${query}`)
-      : of([]);
+    return this.http.get<string[]>(
+      `${environment.apiUrl}/cities?search=${query}`
+    );
   }
 
   private $cities?: Observable<string[]>;
@@ -28,7 +33,7 @@ export class CityService {
     if (!this.$cities) {
       this.$cities = this.http
         .get<string[]>(`${environment.apiUrl}/cities`)
-        .pipe(shareReplay(1)); // Makes sense to cache this since it's a static list
+        .pipe(shareReplay(1)); // Cache this since it's a static list
     }
     return this.$cities;
   }

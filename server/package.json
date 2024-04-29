@@ -4,7 +4,7 @@
   "description": "Minimal webserver in that serves up the contents of world-cities.txt",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "author": "charliewalter",
   "license": "ISC",

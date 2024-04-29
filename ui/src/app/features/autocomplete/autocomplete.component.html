@@ -10,7 +10,7 @@
   [name]="inputName"
 />
 
-<ul class="results" [ngClass]="{ 'results--active': isActive }">
+<ul class="results" [ngClass]="{ 'results--active': isActive }" role="listbox">
   @for (option of options | slice: 0: resultLimit; track option; ; let index =
   $index) {
   <li
@@ -18,6 +18,8 @@
     class="results__item"
     (click)="selectOption(option)"
     [ngClass]="{ 'results__item--highlighted': highlightedIndex() === index }"
+    role="option"
+    data-testid="autocompleteOption"
   >
     {{ option }}
   </li>
